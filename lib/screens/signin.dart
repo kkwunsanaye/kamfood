@@ -16,7 +16,8 @@ class _SignInState extends State<SignIn> {
       body: Container(
         decoration: BoxDecoration(
             gradient: RadialGradient(
-          colors: <Color>[Colors.white, MyStyle().priaryColor],center: Alignment(0, 0.3),
+          colors: <Color>[Colors.white, MyStyle().priaryColor],
+          center: Alignment(0, 0.3),
           radius: 1.0,
         )),
         child: Center(
@@ -70,20 +71,26 @@ class _SignInState extends State<SignIn> {
         ),
       ));
 
-  Widget passwordForm() => Container(
-      width: 250.0,
-      child: TextField(obscureText: true,
-        decoration: InputDecoration(
-          prefixIcon: Icon(
-            Icons.lock,
-            color: MyStyle().darkColor,
-          ),
-          labelStyle: TextStyle(color: MyStyle().darkColor),
-          labelText: 'Password :',
-          enabledBorder: OutlineInputBorder(
-              borderSide: BorderSide(color: MyStyle().darkColor)),
-          focusedBorder: OutlineInputBorder(
-              borderSide: BorderSide(color: MyStyle().priaryColor)),
-        ),
-      ));
+  Widget passwordForm() => Row(
+        mainAxisAlignment: MainAxisAlignment.center,
+        children: <Widget>[
+          Container(
+              width: 250.0,
+              child: TextField(
+                obscureText: true,
+                decoration: InputDecoration(
+                  prefixIcon: Icon(
+                    Icons.lock,
+                    color: MyStyle().darkColor,
+                  ),
+                  labelStyle: TextStyle(color: MyStyle().darkColor),
+                  labelText: 'Password :',
+                  enabledBorder: OutlineInputBorder(
+                      borderSide: BorderSide(color: MyStyle().darkColor)),
+                  focusedBorder: OutlineInputBorder(
+                      borderSide: BorderSide(color: MyStyle().priaryColor)),
+                ),
+              )),
+        ],
+      );
 }
