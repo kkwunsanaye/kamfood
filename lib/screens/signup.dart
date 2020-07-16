@@ -28,7 +28,7 @@ class _SignUpState extends State<SignUp> {
           userForm(),
           MyStyle().mySizebox(),
           passwordForm(),
-           MyStyle().mySizebox(),
+          MyStyle().mySizebox(),
           MyStyle().showTitleH2('ชนิดของสมาชิก :'),
           MyStyle().mySizebox(),
           userRadio(),
@@ -48,14 +48,17 @@ class _SignUpState extends State<SignUp> {
           onPressed: () {
             print(
                 'name = $name, user = $user, password = $password, chooseType = $chooseType');
-            if (name == null || name.isEmpty || user == null || user.isEmpty password == null || password.isEmpty) {
+            if (name == null ||
+                name.isEmpty ||
+                user == null ||
+                user.isEmpty ||
+                password == null ||
+                user.isEmpty) {
               print('Have Space');
               normalDialog(context, 'มีช่องว่าง กรุณากรองทุกช่องคะ');
             } else if (chooseType == null) {
               normalDialog(context, 'โปรดเลือกชนิดของผู้สมัคร');
-              
-            } else {
-            }
+            } else {}
           },
           child: Text(
             'Register',
