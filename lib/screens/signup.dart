@@ -7,7 +7,7 @@ class SignUp extends StatefulWidget {
 }
 
 class _SignUpState extends State<SignUp> {
-  String chooseType;
+  String chooseType, name, user, password;
 
   @override
   Widget build(BuildContext context) {
@@ -42,7 +42,13 @@ class _SignUpState extends State<SignUp> {
         width: 250.0,
         child: RaisedButton(
           color: MyStyle().darkColor,
-          onPressed: () {},
+          onPressed: () {
+            print(
+                'name = $name, user = $user, password = $password, chooseType = $chooseType');
+            if (name == null || name.isEmpty) {
+              print('Have Space');
+            }
+          },
           child: Text(
             'Register',
             style: TextStyle(color: Colors.white),
@@ -134,6 +140,7 @@ class _SignUpState extends State<SignUp> {
           Container(
               width: 250.0,
               child: TextField(
+                onChanged: (value) => name = value.trim(),
                 decoration: InputDecoration(
                   prefixIcon: Icon(
                     Icons.face,
@@ -156,6 +163,7 @@ class _SignUpState extends State<SignUp> {
           Container(
               width: 250.0,
               child: TextField(
+                onChanged: (value) => user = value.trim(),
                 decoration: InputDecoration(
                   prefixIcon: Icon(
                     Icons.account_box,
@@ -178,6 +186,7 @@ class _SignUpState extends State<SignUp> {
           Container(
               width: 250.0,
               child: TextField(
+                onChanged: (value) => password = value.trim(),
                 decoration: InputDecoration(
                   prefixIcon: Icon(
                     Icons.lock,
