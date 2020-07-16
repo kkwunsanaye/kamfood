@@ -13,6 +13,13 @@ class MyStyle {
             fontWeight: FontWeight.bold),
       );
 
+  Text showTitleH2(String title) => Text(
+        title,
+        style: TextStyle(
+            fontSize: 18.0,
+            color: Colors.blue.shade700,
+            fontWeight: FontWeight.bold),
+      );
   Container showLogo() {
     return Container(
       width: 120.0,
